@@ -268,31 +268,32 @@
     <tr>
         <td>
           <br />
-          <p class="title">Hello!</p>
-          <p class="text">
-            Use this unique link to reset your password for email <%= @user.email %>
+          <p>Hello!</p>
+          <p>
+            <% if @record.value == "verified" %>
+              We detected an update of your account details.
+            <% end %>
+            <% if @record.value == "rejected" %>
+              Unfortunately, your account details was rejected.
+            <% end %>
+              Your current account level is <b><%= @record.user.level %></b>
+              Your account state is <b><%= @record.user.state %></b>
+          </p>
+          <p>
+            <% if @record.key == "profile" %>
+              Recently your user profile was <%= @record.value %>.
+            <% end %>
+            <% if @record.key == "id_document" %>
+              Recently your main document was <%= @record.value %>.
+            <% end %>
+            <% if @record.key == "second_document" %>
+              Recently your second document was <% @record.value %>.
+            <% end %>
+            <% if @record.key == "institutional" %>
+              Recently your institutional document was <%= @record.value %>.
+            <% end %>
           </p>
           <br /><br /><br />
-          <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-            <tbody>
-              <tr>
-                <td align="left">
-                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                    <tbody>
-                      <tr>
-                        <td>
-                            <a style="background-color: #12a8a7; color: #ffffff; font-size: 14px; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration:none;" href="https://mobiweb.mobidax.io/#/accounts/password_reset?reset_token=<%= @record.token %>&lang=en"  class="btn btn-primary">Reset in MobiDAX WEB</a>&nbsp;
-                            <a style="background-color: #12a8a7; color: #ffffff; font-size: 14px; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration:none;" class="btn btn-primary" href="https://mobidax.page.link/?link=<%= @record.domain %>/accounts/password_reset?reset_token=<%= @record.token %>&lang=en&apn=com.example.mobidax&afl=<%= @record.domain %>/accounts/password_reset?reset_token=<%= @record.token %>&lang=en&isi=1516806554&ibi=io.mobidax.demo">Reset</a>
-
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <br /><br />
         </td>
       </tr>
     </table>
@@ -332,7 +333,6 @@
 <div style="color:#ffffff;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <div style="line-height: 1.2; font-size: 12px; color: #ffffff; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14px;">
 <p style="color: #ffffff; font-size: 16px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 19px; margin: 0;">
-  
   
   
 <span style="font-size: 14px;">
