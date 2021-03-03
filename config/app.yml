@@ -4,7 +4,7 @@ app:
   domain: mobidax.io
   subdomain: trade
 render_protect: false
-csrfEnabled: true
+csrfEnabled: false
 ssl:
   enabled: true
   email: support@mobidax.io
