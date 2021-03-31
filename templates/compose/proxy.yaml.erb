@@ -32,16 +32,14 @@ services:
       - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
       - "--certificatesresolvers.myresolver.acme.email=<%= @config['ssl']['email'] %>"
       - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-    deploy:
-        labels:
-          - "traefik.enable=true"
-          - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:[a-z-.]+}`)"
-          - "traefik.http.routers.http-catchall.entrypoints=web"
-          - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
-          - "traefik.http.services.http-catchall.loadbalancer.server.port=80"
-          - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-          - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
-          
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:[a-z-.]+}`)"
+      - "traefik.http.routers.http-catchall.entrypoints=web"
+      - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
+      - "traefik.http.services.http-catchall.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
     <%- end -%>
 
 
