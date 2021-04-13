@@ -68,6 +68,7 @@ wallets:
     secret: changeme
   - kind: fee
     address: "changeme"
+    max_balance: 1000.0
     secret: changeme
   btc:
   - kind: deposit
