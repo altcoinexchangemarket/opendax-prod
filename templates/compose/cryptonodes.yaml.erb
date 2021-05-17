@@ -2,29 +2,32 @@ version: '3.6'
 
 services:
   parity:
-    image: parity/parity:v2.7.2-stable
+    image: openethereum/openethereum:v3.2.4
     restart: always
     command: |
       --chain=mainnet
       --mode=active
-      --interface=all
-      --warp=true
-      --snapshot-peers=10
       --min-peers=25
       --max-peers=150
-      --jsonrpc-interface=0.0.0.0
-      --jsonrpc-cors=all
-      --jsonrpc-hosts=all
+      --snapshot-peers=10
       --jsonrpc-apis=all
-      --db-compaction=ssd
+      --jsonrpc-hosts=all
+      --jsonrpc-cors=all
       --no-persistent-txqueue
+      --db-compaction=ssd
+      --interface=all
+      --jsonrpc-interface=0.0.0.0
+      --db-path=/home/openethereum/.local/share/openethereum/db/
+      --base-path=/home/openethereum/.local/share/openethereum
     volumes:
-      - ../data/parity:/home/parity/.local/share/io.parity.ethereum
+      - ../data/parity:/home/openethereum/.local/share/openethereum
     ports:
       - "127.0.0.1:8545:8545"
     deploy:
       placement:
-        constraints: [node.labels.crypto == eth]
+        constraints: [node.labels.crypto == eth] 
+
+
 
   bitcoind:
     image: quay.io/openware/bitcoind:0.19.1
