@@ -1,13 +1,13 @@
 ---
 app:
-  name: Mobidax
-  domain: mobidax.io
-  subdomain: trade
+  name: invexcoin
+  domain: invexcoin.com
+  subdomain: staging
 render_protect: false
 csrfEnabled: false
 ssl:
   enabled: true
-  email: support@mobidax.io
+  email: do-not-reply@invexcoin.com
 images:
   peatio: quay.io/openware/peatio:2.4.19
   barong: quay.io/openware/barong:2.4.12
