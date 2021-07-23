@@ -11,7 +11,7 @@ services:
       MYSQL_ROOT_PASSWORD: <%= @config['database']['password'] %>
     deploy:
       placement:
-        constraints: [node.role == worker]
+        constraints: [node.labels.db == mysqldb]
 
   influxdb:
     image: influxdb:1.7.10
