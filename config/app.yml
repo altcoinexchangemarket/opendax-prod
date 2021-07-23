@@ -20,7 +20,7 @@ finex:
 vendor:
   frontend: git@github.com:openware/baseapp.git
 vault:
-  token: s.UqBtIDAMttTSZxy4zRULebQa
+  token: s.Fy7JLoiatqjyHtPW3gzjXfgC
 database:
   host: db
   port: 3306
