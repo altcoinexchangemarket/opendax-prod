@@ -21,7 +21,6 @@ services:
       - ../config/influxdb/build_candles.sql:/build_candles.sql
       - ../config/influxdb/arke.sql:/arke.sql
       - ../config/influxdb/peatio.sql:/peatio.sql
-      - ../config/arke/historical_data:/data/historical_data
     environment:
        INFLUXDB_ADMIN_ENABLED: "true"
 
