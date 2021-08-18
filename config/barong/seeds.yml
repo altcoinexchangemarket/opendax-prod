@@ -16,6 +16,11 @@ users:
     role: member
     state: active
     level: 3
+  - email: admin@invexcoin.com
+    password: Am8icnzEI3d!
+    role: superadmin
+    state: active
+    level: 3
 
 levels:
   - key: email
